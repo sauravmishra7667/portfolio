@@ -91,6 +91,7 @@
   const expDetail = (r) => `
     <div class="exp-detail">
       ${r.blurb ? `<p>${esc(r.blurb)}</p>` : ''}
+      ${r.credential ? `<p class="cred">${esc(r.credential)}</p>` : ''}
       ${(r.points || []).length ? `<ul>${r.points.map((p) => `<li><span>${esc(p)}</span></li>`).join('')}</ul>` : ''}
       ${tags(r.tags)}
     </div>`;
@@ -132,8 +133,8 @@
 
   const eduRow = (e) => `
     <div class="row wrap-ok">
-      <span class="title">${esc(e.degree)}<span class="sub">${esc(e.school)}</span></span>
-      <span class="meta">${esc(e.place || '')}</span>
+      <span class="title">${esc(e.degree)}<span class="sub">${esc([e.school, e.note].filter(Boolean).join(' · '))}</span></span>
+      <span class="meta">${esc([e.period, e.place].filter(Boolean).join(' · '))}</span>
     </div>`;
 
   /* ---------------- render ---------------- */
@@ -224,8 +225,18 @@
         </p>`;
     }
 
+    // Certifications reuse the experience rows. Index offset keeps the
+    // accordion ids unique when both lists are on the same page.
+    const certs = SITE.certifications || [];
     mount('[data-render="experience-compact"]', experience.map(expItem).join(''));
     mount('[data-render="experience"]', experience.map(roleBlock).join(''));
+    mount('[data-render="certifications-compact"]', certs.map((r, i) => expItem(r, experience.length + i)).join(''));
+    mount('[data-render="certifications"]', certs.map((r, i) => roleBlock(r, experience.length + i)).join(''));
+    // No entries yet: drop the whole section rather than show an empty heading.
+    [['experience', experience], ['certifications', certs]].forEach(([name, list]) => {
+      if (list.length) return;
+      $$(`[data-render="${name}"], [data-render="${name}-compact"]`).forEach((n) => (n.closest('section') || n).remove());
+    });
     mount('[data-render="education"]', (SITE.education || []).map(eduRow).join(''));
 
     mount('[data-render="featured-projects"]',
@@ -380,7 +391,7 @@
     });
   }
 
-  // "Noida, India 11:20 AM" in the site owner's timezone.
+  // "Greater Noida, India 11:20 AM" in the site owner's timezone.
   function footerClock() {
     const el = $('[data-clock]');
     if (!el || typeof SITE === 'undefined') return;

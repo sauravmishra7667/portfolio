@@ -290,6 +290,8 @@ a.exp-sub:hover { color: var(--strong); }
 .exp-detail ul { margin-top: 10px; display: grid; gap: 6px; }
 .exp-detail li { display: flex; gap: 10px; }
 .exp-detail li::before { content: '–'; color: var(--faint); flex: none; }
+.exp-detail .cred { font-size: 12px; color: var(--faint); overflow-wrap: anywhere; }
+.exp-detail p + .cred { margin-top: 6px; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .tag {

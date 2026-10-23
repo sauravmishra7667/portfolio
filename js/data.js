@@ -15,35 +15,38 @@ const SITE = {
                  visits on the live address, once per browser session, so
                  local previews never inflate it.                           */
   site: {
-    url: 'https://abhishek-shukla.vercel.app',
-    counter: { namespace: 'abhishek-shukla-vercel-app', key: 'visits' },
+    url: 'https://saurav-mishra.vercel.app',
+    counter: { namespace: 'saurav-mishra-vercel-app', key: 'visits' },
   },
 
   /* ---------- who you are ---------- */
   profile: {
-    name:     'Abhishek Shukla',
-    handle:   'shukla007',
-    initials: 'AS',
-    avatar:   'assets/avatar.png',         // set to '' to show initials instead
+    name:     'Saurav Mishra',
+    handle:   'sauravmishra7667',
+    initials: 'SM',
+    avatar:   '',                          // path to a photo, e.g. 'assets/avatar.png'; '' shows initials
     // Add more photos here and clicking the avatar cycles through them.
     avatars:  [],
-    role:     'full stack',                // the small line under your name
-    tagline:  'react native · node.js · genai',
-    location: 'Noida, India',
+    role:     'full-stack developer',      // the small line under your name
+    tagline:  'mern · genai',
+    location: 'Greater Noida, India',
     timezone: 'Asia/Kolkata',              // drives the live clock in the footer
-    status:   'open to full-stack & AI roles',
-    resume:   'assets/Abhishek_Resume-up.pdf',
+    status:   'open to full-stack roles',
+    resume:   'assets/Saurav_Mishra_Resume.pdf',
 
     // The short bio on the home page. Keep it to 2–3 sentences.
     bio: [
-      'Full stack developer building mobile and web products end to end — React Native and Next.js on the front, Node.js and Postgres behind them.',
-      'Most recently <strong>Full Stack Developer at Riya Techno Services</strong>, where I owned a hospital management platform from database schema to shipped app.',
-      'Lately I build LLM-powered features: RAG over pgvector, tool calling, and vision models that replace manual data entry.',
+      'Full-stack developer and Computer Science (AIML) undergraduate skilled in the MERN stack — MongoDB, Express, React and Node.js — with a strong grasp of JavaScript, TypeScript, Java and Python.',
+      'Experienced in building RESTful APIs, authentication systems and real-time web applications end to end.',
+      'Recently completed industry job simulations with <strong>HPE, Skyscanner and BCG X</strong>, covering a GenAI chatbot, REST services and React front-end development.',
     ],
 
-    // Things you actually reach for.
-    stack: ['React Native', 'Expo', 'TypeScript', 'Next.js', 'Node.js',
-            'Express', 'PostgreSQL', 'MongoDB', 'pgvector', 'Docker'],
+    // Every skill on the résumé, in the same order.
+    stack: ['JavaScript', 'TypeScript', 'Java', 'Python',
+            'React', 'Node.js', 'Express',
+            'MongoDB', 'PostgreSQL', 'Firebase',
+            'Prompt Engineering', 'LLM API Integration', 'AI Chatbot Development',
+            'VS Code', 'IntelliJ IDEA', 'Antigravity', 'Git', 'GitHub'],
   },
 
   /* ---------- background music ----------
@@ -58,10 +61,10 @@ const SITE = {
 
   /* ---------- links in the footer ---------- */
   socials: [
-    { label: 'github',   url: 'https://github.com/shukla007' },
-    { label: 'linkedin', url: 'https://linkedin.com/in/abhishekshukla007' },
-    { label: 'email',    url: 'mailto:shuklaabhishekkumar007@gmail.com',
-                         copy: 'shuklaabhishekkumar007@gmail.com' },
+    { label: 'github',   url: 'https://github.com/sauravmishra7667' },
+    { label: 'linkedin', url: 'https://linkedin.com/in/sauravmishra04' },
+    { label: 'email',    url: 'mailto:sauravkumar12002@gmail.com',
+                         copy: 'sauravkumar12002@gmail.com' },
   ],
 
   /* ---------- projects ----------
@@ -69,49 +72,38 @@ const SITE = {
      short           →  the one-line description used on the home page
      url             →  where the row links; repo → the GitHub icon,
                         live → a globe icon instead (set one, not both)
-     NOTE: `year` and `repo` are my best guess — your resume lists every project
-     under github.com/shukla007 without dates. Set the real repo URLs and the
-     year you shipped each one.                                              */
+     year            →  empty because the résumé gives no project dates;
+                        fill it in and it shows on the projects page.       */
   projects: [
     {
-      name: 'Smart Inventory',
-      short: 'AI stock-taking: a vision LLM reads items and receipts from the camera.',
-      year: '2026',
-      blurb: 'AI-powered stock-taking platform: a React Native app, a Next.js admin dashboard and a shared Node.js API. A vision LLM reads items and receipts from the camera, and natural-language catalogue search runs on RAG over pgvector.',
-      tags: ['typescript', 'next.js', 'pgvector', 'llm'],
-      url: 'https://github.com/shukla007',
-      repo: 'https://github.com/shukla007',
+      name: 'DocMind',
+      short: 'RAG assistant that answers questions from your own uploaded PDFs, with source citations.',
+      year: '',
+      blurb: 'RAG-based document Q&A assistant that answers questions from a user\'s own uploaded PDFs. Documents are split into overlapping chunks, embedded and stored in a vector database; the most relevant chunks are passed to the LLM as grounding context, and answers stream token by token to the React client with source citations back to the original page. Per-user document collections and chat history live in MongoDB behind JWT-authenticated routes.',
+      tags: ['react', 'node.js', 'express', 'mongodb', 'langchain', 'pinecone', 'gemini api'],
+      url: 'https://github.com/sauravmishra7667/rag-application',
+      repo: 'https://github.com/sauravmishra7667/rag-application',
       featured: true,
     },
     {
-      name: 'HTTP File Server',
-      short: 'Peer-to-peer file sharing over local Wi-Fi. Live on Google Play.',
-      year: '2025',
-      blurb: 'Peer-to-peer file sharing over local Wi-Fi — the app runs an embedded HTTP server so any nearby browser can browse and download shared files. Transfers resume after network drops, and a real-time WebSocket dashboard shows transfer speeds and connected devices. On Google Play.',
-      tags: ['react native', 'tcp sockets', 'zustand'],
-      url: 'https://github.com/shukla007',
-      repo: 'https://github.com/shukla007',
+      name: 'Project Management Tool',
+      short: 'Task and team tracker with role-based access and boards that update without a reload.',
+      year: '',
+      blurb: 'Task and team tracker with project creation, task assignment and progress tracking across team boards. Role-based access lets project owners manage members while members update only their own tasks; due dates, priority levels and status filters keep large boards easy to scan, and board state stays in sync on the client so task updates show without a full page reload. Backend APIs and the database schema manage users, projects and tasks.',
+      tags: ['mongodb', 'express', 'react', 'node.js'],
+      url: 'https://github.com/sauravmishra7667/project-management-tool',
+      repo: 'https://github.com/sauravmishra7667/project-management-tool',
       featured: true,
     },
     {
-      name: 'Inventory Management System',
-      short: 'Offline-first mobile inventory with barcode scanning and background sync.',
-      year: '2025',
-      blurb: 'Offline-first mobile inventory for large catalogues, with barcode scanning, batched background sync to a Node.js API and an indexed SQLite schema for instant search.',
-      tags: ['expo sqlite', 'react query', 'node.js'],
-      url: 'https://github.com/shukla007',
-      repo: 'https://github.com/shukla007',
+      name: 'AI Smart Bazaar',
+      short: 'AI-powered e-commerce platform with a shopping assistant and personalized recommendations.',
+      year: '',
+      blurb: 'AI-powered e-commerce platform where sellers list products and buyers browse, search and place orders. An AI shopping assistant answers product questions and suggests items from plain-language queries, recommendations are personalized from browsing history, cart activity and past orders, and a seller dashboard handles inventory, pricing and orders with AI-generated product descriptions. Cart, checkout and order tracking with payment gateway integration; search filters for category, price and ratings; JWT auth with separate buyer and seller roles.',
+      tags: ['mongodb', 'express', 'react', 'node.js', 'gemini api'],
+      url: 'https://github.com/sauravmishra7667/ai-smart-bazaar',
+      repo: 'https://github.com/sauravmishra7667/ai-smart-bazaar',
       featured: true,
-    },
-    {
-      name: 'Files Downloader',
-      short: 'Download manager with parallel chunked downloads and pause/resume.',
-      year: '2025',
-      blurb: 'Multi-threaded download manager with parallel chunked downloads and pause/resume for large files, built on scoped storage for Android 11+ and iOS.',
-      tags: ['react native', 'background fetch'],
-      url: 'https://github.com/shukla007',
-      repo: 'https://github.com/shukla007',
-      featured: false,
     },
   ],
 
@@ -120,39 +112,58 @@ const SITE = {
      Each entry: { title, date: 'YYYY-MM-DD', blurb, url, featured }         */
   writing: [],
 
-  /* ---------- work history ---------- */
-  experience: [
+  /* ---------- work history ----------
+     Empty — the résumé lists no jobs yet, so the experience sections hide
+     themselves. Each entry: { role, org, short, logo, url, period, place,
+     blurb, points: [], tags: [] }                                          */
+  experience: [],
+
+  /* ---------- certifications ----------
+     Same rows as experience: org → the bold name, place → issuer,
+     role → certificate, period → date issued, credential → the code.       */
+  certifications: [
     {
-      role: 'Full Stack Developer',
-      org: 'Riya Techno Services Pvt. Ltd.',
-      short: 'Riya Techno Services',       // shown on the home page
-      logo: '',                            // path to a square logo; '' shows a monogram
-      url: '',
-      period: 'Jan 2026 — Jul 2026',
-      place: 'Patna, Bihar',
-      blurb: 'Delivered a hospital management platform end to end — the Node.js/Express REST API, the PostgreSQL data layer, and the React Native mobile app used by doctors, staff and administrators.',
-      points: [
-        'Designed the database schema and REST endpoints with role-based access control (RBAC) and JWT authentication to secure patient records.',
-        'Reduced patient registration time by redesigning the intake flow with client-side validation and server-side deduplication.',
-        'Implemented offline-first sync between the mobile app and the API, keeping core hospital modules functional without internet connectivity.',
-        'Improved screen load times through API response optimisation, caching and asynchronous data loading.',
-        'Converted Figma designs into a responsive Material Design 3 UI in collaboration with hospital staff and stakeholders.',
-      ],
-      tags: ['node.js', 'express', 'react native', 'postgresql'],
+      role: 'Software Engineering Job Simulation',
+      org: 'HPE',
+      place: 'Forage',
+      period: '23 Sep 2026',
+      blurb: 'Built a RESTful web service with data upload and unit tests.',
+      credential: 'Code: 6ab2da5627a1fce094fc499f',
+    },
+    {
+      role: 'Front-End Software Engineering Job Simulation',
+      org: 'Skyscanner',
+      place: 'Forage',
+      period: '23 Sep 2026',
+      blurb: 'Built a React web app using the Backpack design system.',
+      credential: 'Code: 6ab39a106e7859ae7e43b40a',
+    },
+    {
+      role: 'GenAI Job Simulation',
+      org: 'BCG X',
+      place: 'Forage',
+      period: '22 Sep 2026',
+      blurb: 'Data extraction, analysis, and an AI-powered financial chatbot.',
+      credential: 'Code: 6ab2cec6b557d34fb9c7c294',
+    },
+    {
+      role: 'Trust and Security with Google Cloud',
+      org: 'Simplilearn',
+      place: '',
+      period: '10 Jul 2026',
+      blurb: '',
+      credential: 'Credential ID: 10450131',
     },
   ],
 
   /* ---------- education ---------- */
   education: [
     {
-      degree: 'Master of Computer Applications (MCA)',
-      school: 'Galgotias University',
-      place:  'Noida, India',
-    },
-    {
-      degree: 'Bachelor of Computer Applications (BCA)',
-      school: 'L.S. College',
-      place:  'Bihar, India',
+      degree: 'Bachelor of Technology in Computer Science and Engineering (AIML)',
+      school: 'Dr. APJ Abdul Kalam Technical University',
+      note:   'CGPA: 7.21 / 10',
+      period: '2023 – 2027',
+      place:  'Greater Noida, UP',
     },
   ],
 };

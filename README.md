@@ -34,12 +34,18 @@ work history and links. Change that one file and every page updates.
 
 ### What still needs you
 
-1. **Project links** — none of the four projects has a public repo, so each
-   links to `github.com/shukla007`. Set `url` / `repo` per project in
-   `js/data.js` when they're public (`live` gives a globe icon instead).
-2. **Project `year`** — guesses (the résumé has no project dates).
+1. **Live address** — `https://saurav-mishra.vercel.app` is a placeholder.
+   Once the site is deployed, put the real address everywhere listed under
+   "Metadata, SEO and the visitor count" below.
+2. **Project `year`** — empty, because the résumé has no project dates. Set
+   it per project in `js/data.js` and it shows on the projects page.
+3. **Photo** — `profile.avatar` is empty, so the home page shows the
+   initials `SM`. Drop a square photo in `assets/` and point `avatar` at it.
 
-The résumé lives at `assets/Abhishek_Resume-up.pdf` (`SITE.profile.resume`).
+Certifications and education come straight from the résumé. While
+`SITE.experience` is empty, the experience sections remove themselves.
+
+The résumé lives at `assets/Saurav_Mishra_Resume.pdf` (`SITE.profile.resume`).
 If you rename it, update that and the hard-coded `href` fallbacks in each page.
 
 Writing: the writing page drops out of the dock and the `b` shortcut while
@@ -48,7 +54,7 @@ Writing: the writing page drops out of the dock and the `b` shortcut while
 
 ## Metadata, SEO and the visitor count
 
-The site lives at **https://abhishek-shukla.vercel.app** (`SITE.site.url`).
+The site lives at **https://saurav-mishra.vercel.app** (`SITE.site.url`).
 Every page has a description, canonical URL, Open Graph and Twitter card tags
 pointing at `assets/og.png` (a 1200×630 preview card), and the home page has
 schema.org `Person` data. Icons: `favicon.ico`, `assets/favicon.svg`,
